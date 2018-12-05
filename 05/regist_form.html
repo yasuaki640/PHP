@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>ユーザ登録フォーム</title>
+  </head>
+  <body>
+    <p>利用するユーザ名とパスワードを入力してください。<br>
+      なお、ユーザ名、パスワードともに半角数字で３０文字以内とします。</p>
+    <form action="registfile.php" method="post">
+      ユーザ名: <br>
+      <input type="text" name="user" size="30"><br>
+      パスワード:<br>
+      <input type="text" name="passwd" size="30"><br>
+      <br>
+      <input type="submit" value="登録する">
+      <input type="reset" value="取り消す">
+    </form>
+  </body>
+</html>
