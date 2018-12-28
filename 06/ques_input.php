@@ -45,20 +45,20 @@
                 <td>授業の満足度は？</td>
                 <td>
                     <?php
-                    $rank = array('5' => '満足', '4' => 'やや満足', '3' => '普通', '2' => 'やや不満', '1' => '不満');
-                    foreach ($rank as $key => $value) {
-                        print("<input type=\"radio\" name=\"rankL\" value=\"{$key}\">{$value}");
-                    }
-                    ?>
+$rank = array('5' => '満足', '4' => 'やや満足', '3' => '普通', '2' => 'やや不満', '1' => '不満');
+foreach ($rank as $key => $value) {
+    echo "<input type=\"radio\" name=\"rankL\" value=\"{$key}\">{$value}";
+}
+?>
                 </td>
             </tr>
             <td>教員の反応は？</td>
                 <td>
                     <?php
-                    foreach ($rank as $key => $value) {
-                        print("<input type =\"radio\" name=\"rankT\" value=\"{$key}\">{$value}");
-                    }
-                    ?>
+foreach ($rank as $key => $value) {
+    echo "<input type =\"radio\" name=\"rankT\" value=\"{$key}\">{$value}";
+}
+?>
                 </td>
             </tr>
             <tr>

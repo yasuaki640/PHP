@@ -1,7 +1,6 @@
 <?php
 //年月日を取得
 if (isset($_GET['ymd'])) {
-
     //日記の年月日を取得
     $ymd = basename($_GET['ymd']);
     $y = intval(substr($ymd, 0, 4));
@@ -10,32 +9,25 @@ if (isset($_GET['ymd'])) {
     $disp_ymd = "{$y}年{$m}月{$d}日の出来事";
     //出来事のデータを取得
     $file_name = "mydata/{$ymd}.txt";
-    if (file_exists($file_name)) 
-    {
+    if (file_exists($file_name)) {
         $diary = file_get_contents($file_name);
-    } else 
-    {
+    } else {
         $diary = '';
     }
-} else 
-{
+} else {
     //カレンダーを経由せず、登録画面にアクセスされた場合はカレンダーに移動
     header('Location: mycalendar.php');
 }
 //出来事を登録する
-if (isset($_POST['action']) and $_POST['action'] == '登録する') 
-{
+if (isset($_POST['action']) and $_POST['action'] == '登録する') {
     $diary = htmlspecialchars($_POST['diary'], ENT_QUOTES, 'UTF-8');
     //出来事が入力されたか調べる
-    if (!empty($diary)) 
-    {
+    if (!empty($diary)) {
         //入力された内容で出来事を登録
         file_put_contents($file_name, $diary);
-    } else 
-    {
+    } else {
         //出来事がなければファイルを削除
-        if (file_exists($file_name)) 
-        {
+        if (file_exists($file_name)) {
             unlink($file_name);
         }
     }
@@ -54,11 +46,11 @@ if (isset($_POST['action']) and $_POST['action'] == '登録する')
         <form method="POST" action="">
             <table>
                 <tr>
-                    <td><?php print($disp_ymd); ?></td>
+                    <td><?php echo $disp_ymd; ?></td>
                 </tr>
                 <tr>
                     <td>
-                        <textarea rows="10" cols="60" name="diary"><?php print($diary); ?></textarea>
+                        <textarea rows="10" cols="60" name="diary"><?php echo $diary; ?></textarea>
                     </td>
                 </tr>
                 <tr>
