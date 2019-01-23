@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="5702dd97-a6e5-4503-8a03-0da585b686f7" />
+          <option name="name" value="student_bbs" />
+          <option name="urls">
+            <array>
+              <option value="file://$USER_HOME$/yasuaki640/サイバー大学/2018秋/UNIXサーバ構築Ⅱ/student_bbs.sql" />
+            </array>
+          </option>
+        </State>
+      </list>
+    </option>
+  </component>
+</project>
