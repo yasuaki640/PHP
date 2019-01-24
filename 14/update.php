@@ -36,22 +36,21 @@ mysqli_close($con);
     <table border="1">
         <tr>
             <td>名前</td>
-            <td>
-                <input type="text" name="name" size="30" value="<?php echo $data["name"]; ?>">
+            <td><input type="text" name="name" size="30" value="<?php echo $data["name"]; ?>">
             </td>
         </tr>
         <tr>
             <td>メッセージ</td>
-            <td>
-            <textarea rows="8" cols="50" name="message">
-                <?php echo $data["message"]; ?>
-            </textarea>
+            <td><textarea rows="8" cols="50" name="message"><?php echo $data["message"]; ?></textarea>
             </td>
         </tr>
         <tr>
             <td>編集用パスワード</td>
-            <td>
-                <input type="text" name="passwd" size="4">
+            <td><input type="text" name="passwd" size="4"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="確認する">
             </td>
         </tr>
     </table>

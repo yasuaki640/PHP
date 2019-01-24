@@ -25,7 +25,7 @@ or die('文字コードの設定に失敗しました');
 
 //編集用パスワードの確認
 $id = $_SESSION["id"];
-$sql = "SELECT * FROM discussion WHERE (id-'$id')";
+$sql = "SELECT * FROM discussion WHERE (id='$id')";
 $query = mysqli_query($con, $sql) or die('fail');
 $data = mysqli_fetch_array($query);
 if ($data["passwd"] != $passwd) {
@@ -38,7 +38,7 @@ $_SESSION["message"] = $message;
 //データベースを切断
 mysqli_close($con);
 ?>
-<p>変更確認画面</p>
+<p>変更完了画面</p>
 <!-- 変更データの確認フォーム -->
 <form method="POST" action="update-submit.php">
     <table border="1">

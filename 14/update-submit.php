@@ -8,7 +8,9 @@
 <?php
 //セッションの開始
 session_start();
-if(empty($_SESSION)){exit;}
+if (empty($_SESSION)) {
+    exit;
+}
 //文字コードをUTF-8にする
 mb_internal_encoding('UTF-8');
 //データベースに接続
@@ -22,7 +24,7 @@ or die('文字コードの設定に失敗しました');
 //変更内容を取得(変更データの主キーも含む)
 $id = $_SESSION["id"];
 $name = htmlspecialchars($_SESSION["name"], ENT_QUOTES, "UTF-8");
-$message = htmlspecialchars($_SESSION["name"], ENT_QUOTES, "UTF-8");
+$message = htmlspecialchars($_SESSION["message"], ENT_QUOTES, "UTF-8");
 //データ変更
 $sql = "UPDATE discussion SET name='$name',message='$message' WHERE id='$id'";
 $query = mysqli_query($con, $sql) or die('fail update');
