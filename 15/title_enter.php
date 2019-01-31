@@ -14,8 +14,9 @@ $_SESSION["thread"] = $thread;
 //番号に数字以外が含まれていたら処理を終了する
 if (preg_match("/[^0-9]/", $thread)) {
     echo '数値以外が入力されています<br>';
-    echo '<a href="bbs_top.php"'
+    echo '<a href="bbs_top.php">ここをクリックしてトップ画面に戻ってください</a><br>';
 }
+mb_internal_encoding('UTF-8');
 //データベースに接続
 $database = 'student_bbs'; //データベース名の設定
 $con = mysqli_connect('localhost', 'student', 'student999')
@@ -49,6 +50,8 @@ mysqli_close($con);
 ?>
 
 <!-- データ入力フォーム -->
+<hr>
+<b>新しいメッセージの入力はこちらからどうぞ。</b><br>
 <form method="POST" action="confirm.php">
     <table border="1">
         <tr>

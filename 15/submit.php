@@ -46,6 +46,10 @@ mysqli_close($con);
         <td><?php echo $thread; ?></td>
     </tr>
     <tr>
+        <td>スレッド番号</td>
+        <td><?php echo $thread; ?></td>
+    </tr>
+    <tr>
         <td>名前</td>
         <td><?php echo $name; ?></td>
     </tr>
