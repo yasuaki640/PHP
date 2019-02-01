@@ -20,14 +20,14 @@ or die($database . 'に接続できません');
 mysqli_query($con, 'SET NAMES UTF8MB4')
 or die('文字コードの設定に失敗しました');
 //タイトル取得
-if (isset($_GET["title"]) $title = htmlspecialchars($_GET["title"]));
+if (isset($_GET["title"])) $title = htmlspecialchars($_GET["title"]);
 //データの取得
-$query = mysqli_query($con, 'SELECT * FROM discussion ORDER BY id DESC')
+$query = mysqli_query($con, 'SELECT * FROM agenda ORDER BY thread')
 or die('検索に失敗しました');
 $flag = 0;
 while ($data = mysqli_fetch_array($query)) {
     //スレッ\ドタイトルのデータが存在すればagendaテーブルに挿入
-    if (!empty($title) and $data["title"] == $title) {
+    if (!empty($title) and $data["title"]==$title) {
         echo '<br>すでにスレッド番号' . $data["thread"] .
             'で同名のタイトルが存在します。<br>同名のスレッドは作成できません。';
         $flag = 1;
